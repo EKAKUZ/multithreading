@@ -1,7 +1,17 @@
 package ru.ifmo.lessons.lesson23.base;
 
+//git branch - список веток
+//git branch имя ветки - создать ветку
+//git checkout имя ветки - переключается на ветку
+
+import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class BaseInfo {
     public static void main(String[] args) {
+        //main - основной поток выполнения программы
+        //запуск программы ->  создание процесса ОС -> начинается последовательное выполнение инструкций
+
 
         // после создания основного потока можно запускать
         // дополнительные потоки, тогда инструкции процесса
@@ -22,9 +32,37 @@ public class BaseInfo {
         // 1. создать класс, который наследуется от класса Thread,
         // инструкции, которые должен выполнять поток описываются в методе
         // public void run();
+        MyThread myThread = new MyThread();
+        myThread.setName("my Thread 1"); // установить группу, установить имя, попытаться установить приоритет
+
+        // передача потока планировщику (Thread Scheduler )
+        myThread.start();
+        //myThread.run(); // без передачи потока планировщику, инструкции этого метода не будут выполняться паралельно
+
+
         // 2. инструкции, которые должен выполнять поток описываются в методе
         // public void run() интерфейса Runnable (при этом набор инструкций
         // можно описать в лямбда или создать отдельный класс)
+
+        Thread thread = new Thread(new MyTask());
+        //MyTask mytask = new MyTask(); -  не относится к потокам
+        thread.setName("my Thread 2");
+        thread.start();
+
+        //Runnable -  функциональный интерфейс
+        new Thread(() -> {
+            System.out.println(Thread.currentThread().getName());
+        }).start();
+
         // 3. воспользоваться возможностями пакета java.util.concurrent.*
+
+        CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>();
+
+
+        ThreadScanner scanner = new ThreadScanner(strings);
+        ThreadFile threadFile = new ThreadFile(strings);
+        scanner.start();
+        threadFile.start();
+
     }
 }
