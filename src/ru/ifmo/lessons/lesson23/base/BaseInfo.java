@@ -1,16 +1,20 @@
 package ru.ifmo.lessons.lesson23.base;
 
+
 //git branch - список веток
 //git branch имя ветки - создать ветку
 //git checkout имя ветки - переключается на ветку
 
 import java.util.Scanner;
+
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BaseInfo {
     public static void main(String[] args) {
+
         //main - основной поток выполнения программы
         //запуск программы ->  создание процесса ОС -> начинается последовательное выполнение инструкций
+
 
 
         // после создания основного потока можно запускать
@@ -26,7 +30,7 @@ public class BaseInfo {
         // время запуска потока определяет сам 'планировщик потоков'
         // 4. NON-RUNNING (TIME WAITING, WAITING, BLOCKED) - поток может
         // находиться в состоянии ожидания
-        // 5. TERMINATED - поток завершает работу
+        // 5. TERMINATED - поток завершил работу
 
         // Варианты описания ИНСТРУКЦИЙ потока:
         // 1. создать класс, который наследуется от класса Thread,
@@ -56,6 +60,7 @@ public class BaseInfo {
 
         // 3. воспользоваться возможностями пакета java.util.concurrent.*
 
+
         CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>();
 
 
@@ -63,6 +68,7 @@ public class BaseInfo {
         ThreadFile threadFile = new ThreadFile(strings);
         scanner.start();
         threadFile.start();
+
 
     }
 }
