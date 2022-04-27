@@ -5,6 +5,9 @@ import com.sun.source.tree.TryTree;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
@@ -23,12 +26,13 @@ public class ThreadFile extends Thread{
                 Thread.sleep(10000);
 
                 String var = strings.stream().min((str1, str2) -> str1.length()- str2.length()).orElse("");
+                Files.write(Paths.get("file.txt"), var.getBytes(), StandardOpenOption.APPEND);
 
-                FileWriter writer = new FileWriter("file.txt", true);
+                /*FileWriter writer = new FileWriter("file.txt", true);
                 System.out.println(var);
                 writer.write(var);
                 writer.write("\n");
-                writer.flush(); //????
+                writer.flush(); //????*/
                 strings.remove(var);
             }
         } catch (InterruptedException |IOException e) {
