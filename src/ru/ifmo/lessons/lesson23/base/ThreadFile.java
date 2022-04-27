@@ -21,11 +21,11 @@ public class ThreadFile extends Thread{
 
     @Override
     public void run() {
-        try {
-            while (true) {
+        while (true) {
+            try {
                 Thread.sleep(10000);
 
-                String var = strings.stream().min((str1, str2) -> str1.length()- str2.length()).orElse("");
+                String var = strings.stream().min((str1, str2) -> str1.length() - str2.length()).orElse("");
                 Files.write(Paths.get("file.txt"), var.getBytes(), StandardOpenOption.APPEND);
 
                 /*FileWriter writer = new FileWriter("file.txt", true);
@@ -34,11 +34,9 @@ public class ThreadFile extends Thread{
                 writer.write("\n");
                 writer.flush(); //????*/
                 strings.remove(var);
+            } catch (InterruptedException |IOException e) {
+                    e.printStackTrace();
             }
-        } catch (InterruptedException |IOException e) {
-            e.printStackTrace();
         }
-
-
     }
 }

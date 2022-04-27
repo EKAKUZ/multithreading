@@ -9,14 +9,14 @@ public class DeadLock {
         Thread thread1 = new Thread(()->{
             System.out.println(Thread.currentThread().getName() + " запущен");
 
-            synchronized (object2){
+            synchronized (object1){
                 try {
                     System.out.println("Действия thread1 над object2");
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                synchronized (object1){
+                synchronized (object2){
                     System.out.println("thread1 -> object2 и object1");
                 }
             }

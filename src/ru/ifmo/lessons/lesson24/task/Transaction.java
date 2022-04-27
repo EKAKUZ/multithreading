@@ -14,5 +14,37 @@ public class Transaction implements Runnable{
     @Override
     public void run() {
         // TODO перевод денежных средств со счета src на счет dst в количестве money
+        /*
+        if (src.getId() < dst.getId()) {
+            synchronized (src) {
+                synchronized (dst) {
+                    if (src.getBalance() < money) {
+                        dst.setBalance(dst.getBalance() + money);
+                        src.setBalance(src.getBalance() - money);
+                    }
+                }
+            }
+        }
+        else {
+            synchronized (dst) {
+                synchronized (src) {
+                    if (src.getBalance() < money) {
+                        dst.setBalance(dst.getBalance() + money);
+                        src.setBalance(src.getBalance() - money);
+                    }
+                }
+            }
+        }*/
+        int srcmoney;
+        synchronized (src) {
+            if (src.getBalance() < money) {
+                srcmoney = src.getBalance();
+                src.setBalance(src.getBalance() - money);
+            }
+        }
+        synchronized (dst) {
+            dst.setBalance(dst.getBalance() + money);
+        }
+
     }
 }
