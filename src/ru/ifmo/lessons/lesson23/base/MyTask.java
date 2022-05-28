@@ -7,6 +7,7 @@ public class MyTask implements Runnable{
     // инструкции, описанные в методе run
     // должны выполняться в отдельном потоке
 
+
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName());

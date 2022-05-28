@@ -21,6 +21,7 @@ public class JoinThreads {
         });
 
 
+
         Thread task2 = new Thread(()->{
 
             try {

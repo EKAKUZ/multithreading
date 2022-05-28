@@ -3,6 +3,7 @@ package ru.ifmo.lessons.lesson23.base;
 import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+
 public class ThreadScanner extends  Thread{
 
     CopyOnWriteArrayList<String> strings;

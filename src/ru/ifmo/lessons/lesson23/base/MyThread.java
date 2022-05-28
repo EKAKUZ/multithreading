@@ -6,6 +6,8 @@ public class MyThread extends Thread{
 
     // инструкции, описанные в методе run будут выполняться в отдельном потоке
 
+
+
     @Override
     public void run() {
         System.out.println(this.getName());
