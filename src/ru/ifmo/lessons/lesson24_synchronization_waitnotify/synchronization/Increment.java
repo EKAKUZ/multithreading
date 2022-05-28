@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson24.synchronization;
+package ru.ifmo.lessons.lesson24_synchronization_waitnotify.synchronization;
 
 public class Increment extends Thread{
     private SomeAccount account;

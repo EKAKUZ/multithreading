@@ -1,8 +1,5 @@
-package ru.ifmo.lessons.lesson23;
+package ru.ifmo.lessons.lesson23_run_start_join_sleep;
 
-import com.sun.source.tree.TryTree;
-
-import java.io.FileWriter;
 import java.io.IOException;
 
 import java.nio.file.Files;

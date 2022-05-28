@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson24.waitnotify;
+package ru.ifmo.lessons.lesson24_synchronization_waitnotify.waitnotify;
 
 public class GetThread implements Runnable{
     private Library library;

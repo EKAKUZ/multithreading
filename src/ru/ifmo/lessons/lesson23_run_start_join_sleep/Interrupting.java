@@ -1,8 +1,7 @@
-package ru.ifmo.lessons.lesson23;
+package ru.ifmo.lessons.lesson23_run_start_join_sleep;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 

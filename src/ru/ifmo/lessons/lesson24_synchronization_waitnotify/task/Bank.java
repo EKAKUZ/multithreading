@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson24.task;
+package ru.ifmo.lessons.lesson24_synchronization_waitnotify.task;
 
 public class Bank {
 

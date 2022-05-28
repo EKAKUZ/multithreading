@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson23;
+package ru.ifmo.lessons.lesson23_run_start_join_sleep;
 
 
 public class MyThread extends Thread{

@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson23;
+package ru.ifmo.lessons.lesson23_run_start_join_sleep;
 
 import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
