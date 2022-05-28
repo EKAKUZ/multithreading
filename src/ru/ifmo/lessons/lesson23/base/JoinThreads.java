@@ -20,8 +20,6 @@ public class JoinThreads {
             integers.add(5000);
         });
 
-
-
         Thread task2 = new Thread(()->{
 
             try {

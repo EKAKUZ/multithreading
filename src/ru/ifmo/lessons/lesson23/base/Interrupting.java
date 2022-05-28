@@ -45,7 +45,6 @@ public class Interrupting {
         });
         actions.start();
 
-
         actions.interrupt(); // interrupted = true
 
     }

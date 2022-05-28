@@ -19,7 +19,6 @@ public class ThreadFile extends Thread{
         this.strings = strings;
     }
 
-
     @Override
     public void run() {
         while (true) {

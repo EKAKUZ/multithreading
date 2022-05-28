@@ -8,8 +8,6 @@ package ru.ifmo.lessons.lesson23.base;
 import java.util.Scanner;
 
 import java.util.concurrent.CopyOnWriteArrayList;
-
-
 public class BaseInfo {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName());
