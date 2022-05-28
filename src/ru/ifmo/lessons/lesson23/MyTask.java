@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson23.base;
+package ru.ifmo.lessons.lesson23;
 
 public class MyTask implements Runnable{
     // перечисление всех

@@ -1,11 +1,9 @@
-package ru.ifmo.lessons.lesson23.base;
+package ru.ifmo.lessons.lesson23;
 
 
 //git branch - список веток
 //git branch имя ветки - создать ветку
 //git checkout имя ветки - переключается на ветку
-
-import java.util.Scanner;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 public class BaseInfo {

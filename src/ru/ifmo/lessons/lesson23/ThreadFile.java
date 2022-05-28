@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson23.base;
+package ru.ifmo.lessons.lesson23;
 
 import com.sun.source.tree.TryTree;
 
