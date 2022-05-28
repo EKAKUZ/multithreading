@@ -17,7 +17,8 @@ public class ThreadScanner extends  Thread{
         while (true) {
             System.out.print("Введите строку \n");
             strings.add(in.nextLine());
-            System.out.println(strings);
+            System.out.println("ThreadScanner" + strings);
+            if (strings.size() == 10) break;
         }
     }
 }

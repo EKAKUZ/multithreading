@@ -34,6 +34,8 @@ public class ThreadFile extends Thread{
                 writer.write("\n");
                 writer.flush(); //????*/
                 strings.remove(var);
+                System.out.println("ThreadFile" + strings);
+                if (strings.size() == 0) break;
             } catch (InterruptedException |IOException e) {
                     e.printStackTrace();
             }

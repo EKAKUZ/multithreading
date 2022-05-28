@@ -11,11 +11,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BaseInfo {
     public static void main(String[] args) {
-
+        System.out.println(Thread.currentThread().getName());
         //main - основной поток выполнения программы
-        //запуск программы ->  создание процесса ОС -> начинается последовательное выполнение инструкций
-
-
+        //запуск программы ->  создание процесса ОС -> создается основной  поток (main поток)
+        // -> начинается последовательное выполнение инструкций
 
         // после создания основного потока можно запускать
         // дополнительные потоки, тогда инструкции процесса
@@ -33,14 +32,15 @@ public class BaseInfo {
         // 5. TERMINATED - поток завершил работу
 
         // Варианты описания ИНСТРУКЦИЙ потока:
+        //Thread Scheduler - обеспечивает работу потоков
         // 1. создать класс, который наследуется от класса Thread,
         // инструкции, которые должен выполнять поток описываются в методе
         // public void run();
-        MyThread myThread = new MyThread();
-        myThread.setName("my Thread 1"); // установить группу, установить имя, попытаться установить приоритет
+        MyThread myThread1 = new MyThread();
+        myThread1.setName("my Thread 1"); // установить группу, установить имя, попытаться установить приоритет
 
         // передача потока планировщику (Thread Scheduler )
-        myThread.start();
+        myThread1.start(); // - планировщик сам вызывает метод run, когда готов
         //myThread.run(); // без передачи потока планировщику, инструкции этого метода не будут выполняться паралельно
 
 
@@ -48,12 +48,12 @@ public class BaseInfo {
         // public void run() интерфейса Runnable (при этом набор инструкций
         // можно описать в лямбда или создать отдельный класс)
 
-        Thread thread = new Thread(new MyTask());
+        Thread thread2 = new Thread(new MyTask());
         //MyTask mytask = new MyTask(); -  не относится к потокам
-        thread.setName("my Thread 2");
-        thread.start();
+        thread2.setName("my Thread 2");
+        thread2.start();
 
-        //Runnable -  функциональный интерфейс
+        //Runnable -  функциональный интерфейс, описание инструкций потока через -> выражение
         new Thread(() -> {
             System.out.println(Thread.currentThread().getName());
         }).start();

@@ -27,19 +27,19 @@ public class Interrupting {
 
 
         // Прерывание потока:
-        // 1. если выброшено неоработанное исключение
+        // 1. если выброшено необработанное исключение
         // 2. остановилась jvm
         // 3. когда выполнены все инструкции
         // 4. если это фоновый поток и все НЕ фоновые потоки завершили
         // работу
 
         Thread actions = new Thread(() -> {
-            while (!Thread.currentThread().isInterrupted()){
+            while (!Thread.currentThread().isInterrupted()){ //interrupted - по умолчанию false
                 System.out.println("some action...");
                 try {
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+                } catch (InterruptedException e) { // при исключении снова interrupted = false
+                    Thread.currentThread().interrupt(); // поэтому снова устанавливаем true
                 }
             }
         });

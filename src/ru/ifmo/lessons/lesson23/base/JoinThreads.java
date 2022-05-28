@@ -4,13 +4,14 @@ import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class JoinThreads {
-
     public static void main (String[] args) {
+
         CopyOnWriteArrayList<Integer> integers = new CopyOnWriteArrayList<>();
 
         Thread task1 = new Thread(()->{
 
             try {
+                // приостанавливает работу через 5000 мс или больше, когда планировщик потоков решит запустить поток
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -44,7 +45,7 @@ public class JoinThreads {
         task1.start();
         task2.start();
         task3.start();
-
+        //System.out.println("main " + integers); -  список мб пустой, так main не ждет остальные потоки
 
         // основной поток должен ждать завершения других потоков
         try {
@@ -52,8 +53,10 @@ public class JoinThreads {
             task2.join();
             task3.join(100000);
         } catch (InterruptedException e) {
-
+            System.out.println(e.getMessage());
         }
+
+
         System.out.println("main " + integers);
 
 
