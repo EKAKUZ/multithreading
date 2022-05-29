@@ -67,6 +67,7 @@ public class TaskExecutor {
         );
         // время выполнения задачи, должно быть меньше интервала запуска потока
 
+
         ScheduledExecutorService everyThreeSecond = Executors.newSingleThreadScheduledExecutor();
         everyThreeSecond.scheduleWithFixedDelay(
                 // метод берет в расчет время выполнения задачи
