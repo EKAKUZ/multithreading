@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson25.Task1;
+package ru.ifmo.lessons.lesson25_multithcollection;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -19,7 +19,7 @@ public class Task implements Delayed {
     }
 
     @Override // метод необходим чтобы выяснить, можно ли извлечь
-    // элемент методом take() если метод вернет 0 или отрицательное число,
+    // элемент методом take(), если метод вернет 0 или отрицательное число,
     // значит элемент можно извлечь из очереди
     public long getDelay(TimeUnit unit) {
         return unit.convert(Duration.between(LocalDateTime.now(),time).getSeconds(), TimeUnit.SECONDS);

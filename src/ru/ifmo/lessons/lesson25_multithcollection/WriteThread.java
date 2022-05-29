@@ -1,5 +1,6 @@
-package ru.ifmo.lessons.lesson25;
+package ru.ifmo.lessons.lesson25_multithcollection;
 
+import java.util.Arrays;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class WriteThread implements Runnable {
@@ -22,7 +23,7 @@ public class WriteThread implements Runnable {
                 // если очередь переполнена, поток блокируется до тех
                 // пор, пока место в очереди не появится
                 System.out.println(message);
-                System.out.println("данные добавлены в очередь" + messages);
+                System.out.println("данные добавлены в очередь " + messages);
 
             } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
@@ -31,3 +32,6 @@ public class WriteThread implements Runnable {
         }
     }
 }
+// если поток находится в состоянии ожидания,
+// и извне попытаться изменить его состояние,
+// произойдет InteruptedException

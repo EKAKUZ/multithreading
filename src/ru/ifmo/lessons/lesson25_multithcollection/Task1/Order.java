@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson25.Task1;
+package ru.ifmo.lessons.lesson25_multithcollection.Task1;
 
 public class Order {
     private String order;

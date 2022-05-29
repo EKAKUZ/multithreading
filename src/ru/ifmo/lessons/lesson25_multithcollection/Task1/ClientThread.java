@@ -1,6 +1,4 @@
-package ru.ifmo.lessons.lesson25.Task1;
-
-import ru.ifmo.lessons.lesson25.Message;
+package ru.ifmo.lessons.lesson25_multithcollection.Task1;
 
 import java.util.concurrent.ArrayBlockingQueue;
 

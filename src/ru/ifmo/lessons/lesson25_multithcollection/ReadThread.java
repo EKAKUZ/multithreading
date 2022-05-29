@@ -1,4 +1,4 @@
-package ru.ifmo.lessons.lesson25;
+package ru.ifmo.lessons.lesson25_multithcollection;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
